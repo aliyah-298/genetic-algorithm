@@ -17,7 +17,7 @@ def make_onemax_target50(dim: int, target: int = 50) -> GAProblem:
     def fitness(x: np.ndarray) -> float:
         count = int(np.sum(x))
         diff = count - target
-        return -float(diff * diff)  # max when diff = 0
+        return 80 - diff 
 
     return GAProblem(
         name=f"OneMax-Target{target} ({dim} bits)",
